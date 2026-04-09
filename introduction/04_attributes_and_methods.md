@@ -141,7 +141,7 @@ def withdrawal(self, amount):
     if amount <= 0:
         print("Withdrawal amount must be positive")
         return False
-    if amount >= self.__balance:
+    if amount > self.__balance:
         print("Insufficient balance")
         return False
     self.__balance -= amount
@@ -162,4 +162,4 @@ Never trust raw input — the method is the last line of defence before the data
 | Setter | Method to update private data | `def setName(self, name):` |
 | `__init__` | Where all attributes are initialized | `def __init__(self, name, bal):` |
 | Encapsulation | Private data + public methods | `__balance` + `getBalance()` |
-| Validation in methods | Guard data before modifying | `if amount >= self.__balance:` |
+| Validation in methods | Guard data before modifying | `if amount > self.__balance:` |
