@@ -51,7 +51,7 @@ class BankAccount:
 
     # Withdraw money (with validation)
     def withdrawal(self, amount):
-        if amount >= self.__balance:
+        if amount > self.__balance:
             print("Insufficient balance")
             return False
         self.__balance -= amount
