@@ -1,0 +1,57 @@
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e6f0ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F8EF7;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#2e5bc8;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="gradInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34C97C;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#1a9d5e;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="320" fill="url(#gradBg)" />
+  
+  <!-- Outer Class -->
+  <rect x="50" y="40" width="280" height="240" rx="8" fill="url(#gradOuter)" stroke="#2e5bc8" stroke-width="2" />
+  <text x="70" y="65" font-size="16" font-weight="bold" fill="white" font-family="Segoe UI, Arial">class Outer:</text>
+  
+  <!-- Static members -->
+  <rect x="70" y="80" width="240" height="50" rx="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+  <text x="85" y="100" font-size="12" fill="white" font-family="Segoe UI, Arial">salary = 800000 (class var)</text>
+  <text x="85" y="120" font-size="12" fill="white" font-family="Segoe UI, Arial">bonus_percent = 15</text>
+  
+  <!-- Inner Class -->
+  <rect x="70" y="150" width="240" height="110" rx="6" fill="url(#gradInner)" stroke="#1a9d5e" stroke-width="2" />
+  <text x="85" y="170" font-size="14" font-weight="bold" fill="white" font-family="Segoe UI, Arial">class Inner:</text>
+  
+  <rect x="85" y="180" width="210" height="60" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+  <text x="95" y="198" font-size="11" fill="white" font-family="Segoe UI, Arial">__init__(title, include_bonus)</text>
+  <text x="95" y="215" font-size="11" fill="white" font-family="Segoe UI, Arial">display() — uses Outer.salary</text>
+  <text x="95" y="232" font-size="11" fill="white" font-family="Segoe UI, Arial">(explicit reference needed)</text>
+  
+  <!-- Access arrow -->
+  <path d="M 300 180 L 380 180" stroke="#FFD166" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="315" y="170" font-size="11" fill="#FFD166" font-weight="bold" font-family="Segoe UI, Arial">Access</text>
+  
+  <!-- Usage box -->
+  <rect x="400" y="40" width="280" height="240" rx="8" fill="rgba(255,209,102,0.1)" stroke="#FFD166" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="420" y="65" font-size="14" font-weight="bold" fill="#F7934F" font-family="Segoe UI, Arial">Usage:</text>
+  
+  <rect x="415" y="80" width="250" height="160" rx="4" fill="rgba(0,0,0,0.05)" stroke="#F7934F" stroke-width="1" />
+  <text x="425" y="100" font-size="11" fill="#333" font-family="monospace">1. Direct Instantiation:</text>
+  <text x="430" y="118" font-size="10" fill="#555" font-family="monospace">obj = Outer.Inner("Dev")</text>
+  <text x="430" y="133" font-size="10" fill="#555" font-family="monospace">obj.display()</text>
+  
+  <text x="425" y="155" font-size="11" fill="#333" font-family="monospace">2. @classmethod Factory:</text>
+  <text x="430" y="173" font-size="10" fill="#555" font-family="monospace">mgr = Outer.create_inner</text>
+  <text x="430" y="188" font-size="10" fill="#555" font-family="monospace">  ("manager", with_bonus=True)</text>
+  <text x="430" y="203" font-size="10" fill="#555" font-family="monospace">mgr.display()</text>
+  
+  <!-- Legend -->
+  <text x="50" y="305" font-size="10" fill="#666" font-family="Segoe UI, Arial">✓ No outer instance needed  |  ✓ Accesses class variables only  |  ✓ Explicit reference: Outer.member</text>
+</svg>

@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradBg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff5f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffe6db;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradType" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF476F;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#c01d4b;stop-opacity:0.85" />
+    </linearGradient>
+    <linearGradient id="gradSimple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7934F;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#d96f2e;stop-opacity:0.85" />
+    </linearGradient>
+    <linearGradient id="gradFunc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34C97C;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#1a9d5e;stop-opacity:0.85" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="420" fill="url(#gradBg4)" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-size="16" font-weight="bold" fill="#333" font-family="Segoe UI, Arial" text-anchor="middle">Anonymous Class Alternatives in Python</text>
+  
+  <!-- Card 1: type() -->
+  <rect x="20" y="60" width="180" height="170" rx="8" fill="url(#gradType)" stroke="#c01d4b" stroke-width="2" />
+  <text x="40" y="85" font-size="12" font-weight="bold" fill="white" font-family="Segoe UI, Arial">type()</text>
+  <text x="40" y="105" font-size="9" fill="#FFD166" font-family="Segoe UI, Arial">Dynamic creation</text>
+  
+  <rect x="35" y="115" width="150" height="95" rx="3" fill="rgba(0,0,0,0.2)" />
+  <text x="42" y="132" font-size="8" fill="white" font-family="monospace">P = type("P", {},</text>
+  <text x="42" y="143" font-size="8" fill="white" font-family="monospace">{"x": 10})</text>
+  <text x="42" y="160" font-size="8" fill="white" font-family="monospace">p = P()  # Dynamic</text>
+  
+  <text x="40" y="195" font-size="9" fill="white" font-family="Segoe UI, Arial">⚠️ Metaprogramming only</text>
+  
+  <!-- Card 2: SimpleNamespace -->
+  <rect x="220" y="60" width="180" height="170" rx="8" fill="url(#gradSimple)" stroke="#d96f2e" stroke-width="2" />
+  <text x="240" y="85" font-size="12" font-weight="bold" fill="white" font-family="Segoe UI, Arial">SimpleNamespace</text>
+  <text x="240" y="105" font-size="9" fill="#FFD166" font-family="Segoe UI, Arial">Data container</text>
+  
+  <rect x="235" y="115" width="150" height="95" rx="3" fill="rgba(0,0,0,0.2)" />
+  <text x="242" y="132" font-size="8" fill="white" font-family="monospace">from types import</text>
+  <text x="242" y="143" font-size="8" fill="white" font-family="monospace">SimpleNamespace</text>
+  <text x="242" y="160" font-size="8" fill="white" font-family="monospace">obj = SimpleNamespace</text>
+  <text x="242" y="171" font-size="8" fill="white" font-family="monospace">(x=10)</text>
+  
+  <text x="240" y="195" font-size="9" fill="white" font-family="Segoe UI, Arial">✓ Clean, lightweight</text>
+  
+  <!-- Card 3: Lambda -->
+  <rect x="420" y="60" width="180" height="170" rx="8" fill="url(#gradFunc)" stroke="#1a9d5e" stroke-width="2" />
+  <text x="440" y="85" font-size="12" font-weight="bold" fill="white" font-family="Segoe UI, Arial">Lambda / Closure</text>
+  <text x="440" y="105" font-size="9" fill="#FFD166" font-family="Segoe UI, Arial">Behavior (Pythonic!)</text>
+  
+  <rect x="435" y="115" width="150" height="95" rx="3" fill="rgba(0,0,0,0.2)" />
+  <text x="442" y="132" font-size="8" fill="white" font-family="monospace">greet = lambda x:</text>
+  <text x="442" y="143" font-size="8" fill="white" font-family="monospace">f"Hi, {x}"</text>
+  <text x="442" y="160" font-size="8" fill="white" font-family="monospace">greet("Aji")  # Quick</text>
+  
+  <text x="440" y="195" font-size="9" fill="white" font-family="Segoe UI, Arial">✓ First-class functions</text>
+  
+  <!-- Card 4: Local Class -->
+  <rect x="620" y="60" width="160" height="170" rx="8" fill="url(#gradFunc)" stroke="#1a9d5e" stroke-width="2" />
+  <text x="640" y="85" font-size="12" font-weight="bold" fill="white" font-family="Segoe UI, Arial">Local Class</text>
+  <text x="640" y="105" font-size="9" fill="#FFD166" font-family="Segoe UI, Arial">Scoped logic</text>
+  
+  <rect x="635" y="115" width="140" height="95" rx="3" fill="rgba(0,0,0,0.2)" />
+  <text x="642" y="132" font-size="8" fill="white" font-family="monospace">def method():</text>
+  <text x="642" y="143" font-size="8" fill="white" font-family="monospace">  class Local:</text>
+  <text x="642" y="154" font-size="8" fill="white" font-family="monospace">    pass</text>
+  <text x="642" y="170" font-size="8" fill="white" font-family="monospace">  return Local()</text>
+  
+  <text x="640" y="195" font-size="9" fill="white" font-family="Segoe UI, Arial">✓ Organized, clean</text>
+  
+  <!-- Use cases grid -->
+  <rect x="20" y="250" width="760" height="150" rx="8" fill="rgba(0,0,0,0.05)" stroke="#ccc" stroke-width="1" />
+  
+  <text x="40" y="275" font-size="12" font-weight="bold" fill="#333" font-family="Segoe UI, Arial">When to Use:</text>
+  
+  <text x="40" y="300" font-size="10" fill="#333" font-family="Segoe UI, Arial">• type(): Framework internals (Django ORM, DRF serializers)</text>
+  <text x="40" y="318" font-size="10" fill="#333" font-family="Segoe UI, Arial">• SimpleNamespace: Quick data container (configs, API responses)</text>
+  <text x="40" y="336" font-size="10" fill="#333" font-family="Segoe UI, Arial">• Lambda: Callbacks, filter(), map(), decorators</text>
+  <text x="40" y="354" font-size="10" fill="#333" font-family="Segoe UI, Arial">• Local Class: Encapsulated method-specific logic</text>
+  
+  <text x="40" y="385" font-size="10" fill="#666" font-family="Segoe UI, Arial">💡 Interview Answer: "Python prefers functions over anonymous classes because they're simpler and more readable."</text>
+</svg>
